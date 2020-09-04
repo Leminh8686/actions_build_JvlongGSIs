@@ -5,8 +5,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://firmware.meizu.com/Firmware/Flyme/meizu17_Pro/8.1.2.3/cn/20200817155932/eef1ef0c/update.zip
-  ROM_NAME: Flyme
+  ROM_URL: https://android.googleapis.com/packages/ota-api/vsmart_v420a_v420aopen/e3782718c6cfcc9dfd0838a7ecc97216a6ef5e25.zip
+  ROM_NAME: Generic
   TZ: Asia/Shanghai
 
 jobs:
@@ -32,7 +32,8 @@ jobs:
        
        - name: Setting up JvlongGSI requirements
          run: |
-              cd GSI-BUILD-TOOL
+             sudo chmod -R 777 GSI-BUILD-TOOL
+             cd GSI-BUILD-TOOL
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
